@@ -1,0 +1,164 @@
+name: Bug
+description: Something broken — regression or defect (engineering or support)
+title: "🐛 "
+type: Bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report **observed behaviour** and **steps to reproduce**.
+        Avoid proposing a root cause unless you have evidence.
+        Suitable for engineering and support — fill in whatever you know.
+        Use **Unknown** for anything you can't answer; leave optional fields blank if they don't apply.
+        Attach screenshots or logs on the issue after creating it.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Short description of the defect from the user's perspective.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What should have happened. Use Unknown if you don't know.
+    validations:
+      required: false
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      description: What happened instead. Use Unknown if you don't know.
+    validations:
+      required: false
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps from a clean state. Include account, job, or request IDs if safe to share.
+      placeholder: |
+        1. …
+        2. …
+        3. Observe …
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: environment
+    attributes:
+      label: Environment
+      description: Select all that apply.
+      options:
+        - label: Web
+        - label: iOS
+        - label: Android
+        - label: Backend
+        - label: Production
+        - label: Staging
+        - label: Sandbox
+        - label: Development
+    validations:
+      required: false
+
+  - type: input
+    id: product-area
+    attributes:
+      label: Product area
+      description: Where in the product this happens. Use Unknown if you don't know.
+      placeholder: Unknown
+    validations:
+      required: false
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: Page or screen where it happened. Use Unknown if you don't know.
+      placeholder: Unknown
+    validations:
+      required: false
+
+  - type: input
+    id: affected-client
+    attributes:
+      label: Affected client / account
+      description: Housing provider or account name. Use Unknown if you don't know.
+      placeholder: Unknown
+    validations:
+      required: false
+
+  - type: input
+    id: django-url
+    attributes:
+      label: Affected user's Django URL
+      description: Django admin URL for the affected user, if you have it. Use Unknown if you don't know.
+      placeholder: Unknown
+    validations:
+      required: false
+
+  - type: input
+    id: browser-app
+    attributes:
+      label: Browser / app + version
+      description: e.g. Chrome 126 on macOS, or App 4.12.0 (1234). Use Unknown if you don't know.
+      placeholder: Unknown
+    validations:
+      required: false
+
+  - type: input
+    id: role
+    attributes:
+      label: Role
+      description: Role of the person who hit the bug (e.g. housing officer, resident). Use Unknown if you don't know.
+      placeholder: Unknown
+    validations:
+      required: false
+
+  - type: dropdown
+    id: reporter-severity
+    attributes:
+      label: Reporter severity (your view)
+      description: Your view of how severe this is. Triage sets the official severity later — this is not acted on as a priority.
+      options:
+        - Unknown
+        - Critical
+        - High
+        - Medium
+        - Low
+    validations:
+      required: false
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: How many users, and how blocking — in your words. Use Unknown if you don't know.
+    validations:
+      required: false
+
+  - type: input
+    id: slack-thread
+    attributes:
+      label: Slack thread
+      description: Link to an existing bugs Slack thread, if there is one.
+      placeholder: https://plentific.slack.com/archives/…
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-details
+    attributes:
+      label: Additional details
+      description: >
+        Anything else that helps triage or reproduce — include only what applies
+        (e.g. API endpoint or service, approximate time of occurrence,
+        error message or correlation ID).
+      placeholder: |
+        e.g. POST /api/v3/… · around 14:32 UTC · correlation id …
+    validations:
+      required: false

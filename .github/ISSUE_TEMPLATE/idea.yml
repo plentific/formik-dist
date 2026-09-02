@@ -1,0 +1,29 @@
+name: Idea
+description: An internal proposal, idea, suggestion or roadmap item
+title: "💡 "
+type: Idea
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use an Idea for a internal proposal, idea, suggestion or roadmap item.
+
+  - type: textarea
+    id: high-level-user-stories
+    attributes:
+      label: High-level user stories
+      description: High level user stories that the idea is based on.
+      placeholder: As a ... I want to ... so that ... …
+    validations:
+      required: false
+
+  - type: textarea
+    id: document-links
+    attributes:
+      label: Document links
+      description: Requirements, designs, technical documents, or other references.
+      placeholder: |
+        https://…
+        https://…
+    validations:
+      required: false

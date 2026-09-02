@@ -1,0 +1,146 @@
+name: Change Request
+description: A change or enhancement request raised by a client, for Product to triage.
+title: "🔧 "
+type: Change Request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Before you start
+        Describe the **problem the client is facing**, not the fix. If the client (or you) already has an idea for a solution, there's a field below for that — it won't be ignored, but Product needs the underlying problem first to judge whether that's the right fix, a different fix, or something that's already possible today.
+
+        Takes about 5 minutes. If you're stuck on a question, a short honest answer ("not sure") is more useful than a guess.
+
+  - type: input
+    id: client
+    attributes:
+      label: Client / account
+      placeholder: e.g. ABC Housing Association
+    validations:
+      required: true
+
+  - type: input
+    id: requestor
+    attributes:
+      label: Who raised this?
+      description: Client contact (name/role).
+      placeholder: e.g. John Smith (Repairs Manager, ABC Housing Association)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product area
+      description: Pick the closest fit — doesn't need to be exact.
+      options:
+        - AI
+        - Automations
+        - API/Integrations
+        - Asset Management
+        - Compliance
+        - Contractor Solutions
+        - Data/Analytics
+        - Field Service
+        - Inspections
+        - Supply Chain Solutions
+        - Projects
+        - Repairs Manager
+        - Resident platform (Plentific)
+        - Other / not sure
+    validations:
+      required: false
+
+  - type: dropdown
+    id: country
+    attributes:
+      label: Country
+      options:
+        - UK
+        - Germany
+    validations:
+      required: false
+
+  - type: input
+    id: user_story
+    attributes:
+      label: High-level user story
+      description: 'Format: As a [role], I want to [goal], so that [benefit]. Describe the goal, not the feature.'
+      placeholder: As a scheduling coordinator, I want to see a booking's priority at a glance, so that urgent jobs don't get missed.
+    validations:
+      required: false
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's going wrong, specifically?
+      description: >-
+        Walk through the mechanics: what happens today, what the client has to
+        do instead, how often, at what scale. "It's difficult" tells Product
+        nothing — a concrete example does.
+      placeholder: >-
+        e.g. The booking list doesn't show priority, so the coordinator has to
+        open each job individually to check it. With 40+ bookings a day,
+        that's a few minutes lost per job, every day.
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Why does it matter?
+      description: The real consequence — time lost, risk, cost, a relationship at risk. This is what lets Product judge urgency.
+      placeholder: >-
+        e.g. Urgent jobs have occasionally been scheduled behind non-urgent
+        ones, and the client has raised it twice as a resident complaint.
+    validations:
+      required: true
+
+  - type: textarea
+    id: ask
+    attributes:
+      label: What has the client actually asked for, if anything?
+      description: >-
+        The specific fix they've proposed, in their own words. Product may land on something
+        different which is why its important you describe the detail in as much detail as possible; this is just useful context. Write "nothing specific" if
+        they only described the problem.
+      placeholder: e.g. "Add a priority column to the booking list."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Have alternatives or workarounds already been looked into?
+      description: >-
+        Have you, and/or the client explored alternatives or workarounds already? If so, what were they and why were they discounted? If not, why not?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: How many clients does this affect?
+      options:
+        - Just this one client
+        - A few clients (2-5)
+        - Many clients, or a recurring theme
+        - Not sure
+    validations:
+      required: false
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence
+      description: Links to Salesforce, support tickets, call notes, direct quotes, screenshots — whatever backs this up.
+    validations:
+      required: false
+
+  - type: textarea
+    id: other
+    attributes:
+      label: Anything else useful for Product?
+      description: Who else internally is chasing this, or other context.
+    validations:
+      required: false
