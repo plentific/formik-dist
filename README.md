@@ -21,3 +21,4 @@ There are tools that exist to circumvent that (like `gitpkg.vercel.app` pointing
 7. Copy the `dist` folder from `packages/formik` into this repo
 8. Create a PR to merge this repo's file update to `master`
 9. Point the dashboard's `Formik` dependency to the new commit
+
